@@ -1,16 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Pantalla Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js"></script>
+
+    <title>Index</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+QLD+Hand:wght@400..700&family=Hanalei+Fill&family=Knewave&display=swap');
+
+        .titulo-nav {
+  font-family: "Knewave", system-ui;
+          }
+    </style>
 </head>
-<body>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+
+<nav class="bg-white p-4 text-red-500 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="flex items-center titulo-nav text-2xl font-bold pl-8">
+            <img th:src="@{/imagenes/cruz.avif}" alt="Cruz" class="h-10 w-10 mr-2">
+            CLINICA SALUD TOTAL
+        </a>
+        <ul class="flex space-x-6">
+            <li><a href="/" class="hover:text-blue-200">Inicio</a></li>
+            <li><a href="/servicios" class="hover:text-blue-200">Servicios</a></li>
+            <li><a href="/agendar-cita" class="hover:text-blue-200">Agendar Cita</a></li>
+            <li><a href="/contacto" class="hover:text-blue-200">Contacto</a></li>
+        </ul>
+    </div>
+</nav>
 
 
+<div id="animation-carousel" class="relative w-full" data-carousel="static">
+    <div class="relative h-96 overflow-hidden md:h-[500px] lg:h-[600px]">
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/imagenes/imagen1.jpg}" class="w-full h-full object-cover" alt="Clínica Imagen 1">
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Nuestro Laboratorio en tu casa</h2>
+                    <p class="text-lg lg:text-2xl">Agenda tu cita para toma de muestras al 399 8000 ext.0 de lunes a domingo de 07h00 a 19h00</p>
+                </div>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/imagenes/imagen2.jpg}" class="w-full h-full object-cover" alt="Clínica Imagen 2">
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Atención Médica de Calidad</h2>
+                    <p class="text-lg lg:text-2xl">Profesionales dedicados a tu bienestar y el de tu familia.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img th:src="@{/imagenes/imagen3.jpg}" class="w-full h-full object-cover" alt="Clínica Imagen 3">
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Tecnología Avanzada</h2>
+                    <p class="text-lg lg:text-2xl">Diagnósticos precisos y tratamientos efectivos con equipos de última generación.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/imagenes/imagen4.jpg}" class="w-full h-full object-cover" alt="Clínica Imagen 4">
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Cuidado Personalizado</h2>
+                    <p class="text-lg lg:text-2xl">Un enfoque humano para cada paciente, garantizando su comodidad.</p>
+                </div>
+            </div>
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/imagenes/imagen5.jpg}" class="w-full h-full object-cover" alt="Clínica Imagen 5">
+            <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
+                <div>
+                    <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Siempre a tu lado</h2>
+                    <p class="text-lg lg:text-2xl">Tu salud es nuestra prioridad, 24/7 a tu servicio.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+    </button>
+</div>
 
+<section class="container mx-auto my-12 p-8 bg-white rounded-lg shadow-lg">
+    <h1 class="text-4xl font-extrabold text-center text-red-600 mb-6">Tu Salud es Nuestra Prioridad</h1>
+    <p class="text-lg text-center text-gray-700 leading-relaxed mb-8">
+        En Clínica Salud Total, nos dedicamos a ofrecer atención médica de la más alta calidad, con un equipo de profesionales comprometidos y la tecnología más avanzada. Nuestro objetivo es tu bienestar y el de tu familia.
+    </p>
+    <div class="flex justify-center space-x-4">
+        <a href="/agendar-cita" class="bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
+            Agendar Cita Ahora
+        </a>
+        <a href="/servicios" class="bg-gray-200 hover:bg-gray-300 text-red-600 font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
+            Ver Nuestros Servicios
+        </a>
+    </div>
+</section>
 
+<section class="container mx-auto my-12 p-8">
+    <h2 class="text-3xl font-bold text-center text-red-600 mb-8">¿Por qué elegirnos?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img src="">
+            <h3 class="text-xl font-semibold mb-2">Equipo Especializado</h3>
+            <p class="text-gray-600">Contamos con médicos altamente calificados y con amplia experiencia en diversas especialidades.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img src="">
+            <h3 class="text-xl font-semibold mb-2">Tecnología Avanzada</h3>
+            <p class="text-gray-600">Equipos de última generación para diagnósticos precisos y tratamientos efectivos.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img src="">
+            <h3 class="text-xl font-semibold mb-2">Atención Integral</h3>
+            <p class="text-gray-600">Un enfoque humano y personalizado para cada paciente, garantizando su bienestar.</p>
+        </div>
+    </div>
+</section>
 
+<footer class="bg-red-600 text-white p-8 mt-12">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2025 Clínica Salud Total. Todos los derechos reservados.</p>
+        <p>Teléfono: +593 99 123 4567 | Horario: Lun-Vie 8:00 - 18:00</p>
 
+    </div>
+</footer>
 
 </body>
 </html>
