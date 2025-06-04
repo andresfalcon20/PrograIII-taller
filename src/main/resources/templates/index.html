@@ -8,11 +8,13 @@
 
     <title>Index</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+QLD+Hand:wght@400..700&family=Hanalei+Fill&family=Knewave&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Coiny&family=Edu+QLD+Hand:wght@400..700&family=Hanalei+Fill&family=Knewave&family=Limelight&display=swap');                .titulo-nav {
+                  font-family: "Coiny", system-ui;
 
-        .titulo-nav {
-  font-family: "Knewave", system-ui;
-          }
+                          }
+                .text-nav{
+  font-family: "Limelight", sans-serif;
+        }
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800 bg-gray-50">
@@ -20,14 +22,13 @@
 <nav class="bg-white p-4 text-red-500 shadow-md">
     <div class="container mx-auto flex justify-between items-center">
         <a href="/" class="flex items-center titulo-nav text-2xl font-bold pl-8">
-            <img th:src="@{/imagenes/cruz.avif}" alt="Cruz" class="h-10 w-10 mr-2">
+            <img th:src="@{/imagenes/cruz1.jpg}" alt="Cruz" class="h-10 w-10 mr-4">
             CLINICA SALUD TOTAL
         </a>
         <ul class="flex space-x-6">
-            <li><a href="/" class="hover:text-blue-200">Inicio</a></li>
-            <li><a href="/servicios" class="hover:text-blue-200">Servicios</a></li>
-            <li><a href="/agendar-cita" class="hover:text-blue-200">Agendar Cita</a></li>
-            <li><a href="/contacto" class="hover:text-blue-200">Contacto</a></li>
+            <li><a href="/" class="hover:text-red-200 text-nav">Inicio</a></li>
+            <li><a href="/agendar-cita"  class="hover:text-red-200 text-nav">Agendar Cita</a></li>
+            <li><a href="/contacto"  class="hover:text-red-200 text-nav">Contacto</a></li>
         </ul>
     </div>
 </nav>
@@ -40,7 +41,7 @@
             <div class="absolute inset-0 flex flex-col justify-center items-center p-4 text-white bg-gradient-to-b from-black/60 to-transparent md:flex-row md:justify-start md:items-center md:p-8 md:bg-gradient-to-r md:text-left">
                 <div>
                     <h2 class="text-4xl font-bold mb-4 lg:text-6xl">Nuestro Laboratorio en tu casa</h2>
-                    <p class="text-lg lg:text-2xl">Agenda tu cita para toma de muestras al 399 8000 ext.0 de lunes a domingo de 07h00 a 19h00</p>
+                    <p class="text-lg lg:text-2xl">Agenda tu cita para toma de muestras a domicillio</p>
                 </div>
             </div>
         </div>
@@ -118,7 +119,7 @@
     <h2 class="text-3xl font-bold text-center text-red-600 mb-8">¿Por qué elegirnos?</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-md text-center">
-            <img src="">
+            <img th:src="@{/imagenes/equipo.png}" alt="Cruz" class="h-10 w-10 ">
             <h3 class="text-xl font-semibold mb-2">Equipo Especializado</h3>
             <p class="text-gray-600">Contamos con médicos altamente calificados y con amplia experiencia en diversas especialidades.</p>
         </div>
